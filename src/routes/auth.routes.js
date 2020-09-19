@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 require('dotenv/config');
 
 const User = require('../models/User');
-const { registerValidation, loginValidation } = require('../validation');
+const { registerValidation, loginValidation } = require('../utils/validation');
 
 
 authRouter.post('/register', async (request, response) => {
