@@ -1,16 +1,16 @@
 const express = require('express');
 const authRouter = require('./routes/auth.routes');
-const connectDB = require('./Database/Connection');
-
+const connectDB = require('./database/Connection');
 
 const app = express();
 
-app.use(express.json());
-
-// Conectando ao MongoDB
+// Conectar ao MongoDB
 connectDB();
 
-// Importando as rotas
-app.use('/api/user', authRouter);
+// Middlewares
+app.use(express.json());
+
+// Importar as rotas
+app.use('/api/users', authRouter);
 
 app.listen(3000, () => console.log('Server is running!'));
